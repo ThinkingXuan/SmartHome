@@ -1,4 +1,4 @@
-# SmartHome
+SmartHome
 
 😁SmartHome 一款基于ZigBee的智能家居的设计于实现😂
 
@@ -23,15 +23,16 @@
 
 硬件图示：
 
-| 硬件图片                                                     |  名称  | 功能         |
-| ------------------------------------------------------------ | :----: | ------------ |
-| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> | CC2530 | 单片机控制器 |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
-|                                                              |        |              |
+| 硬件图片                                                     |   名称   | 功能           |
+| ------------------------------------------------------------ | :------: | -------------- |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |  CC2530  | 单片机控制器   |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151216878.png" width="100" center=true></center> | ESP-01s  | 组成智能网关   |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |  DHT111  | 温湿度传感器   |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |   MQ-2   | 烟雾传感器     |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> | 光敏电阻 | 测量光招       |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |  蜂鸣器  | 报警           |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |  继电器  | 控制小灯的通断 |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |   小灯   | 照明           |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> | 电机驱动 | 驱动直流电机   |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> | 直流电机 | 电机使风扇旋转 |
 
