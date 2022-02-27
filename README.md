@@ -8,7 +8,9 @@
 
 技术点：
 
-- 硬件：CC2530，ZigBee协议栈，ESP-01s 智能网关模块，各种常用传感器使用等
+- 硬件：CC2530，ZigBee协议栈，各种常用传感器使用等
+- 网关：ESP-01s 构建智能网关，将硬件接入互联网
+- 家电控制技术：常用家电和驱动电路
 - 服务端：SpringMVC, MySQL，Socket等
 - Android客户端：RxJava，Okhttp，Retrofit，Gson，MPAndroidChart，WebSocket等
 
@@ -18,3 +20,18 @@
 - IDEA: 后台服务器的代码编写的集成开发环境
 - AndroidStudio：Android客户端的代码编写的集成开发环境
 - Tomcat：一个支持HTTP协议的Web容器
+
+硬件图示：
+
+| 硬件图片                                                     |  名称  | 功能         |
+| ------------------------------------------------------------ | :----: | ------------ |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> | CC2530 | 单片机控制器 |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+|                                                              |        |              |
+
