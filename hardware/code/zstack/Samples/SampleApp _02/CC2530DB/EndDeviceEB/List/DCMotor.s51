@@ -1,0 +1,761 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        24/Apr/2020  22:30:12 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr /
+//                          ojects\zstack\Samples\SampleApp                   /
+//                          _02\Source\DCMotor.c                              /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. /
+//                          0\Projects\zstack\Samples\SampleApp               /
+//                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg /
+//                          " (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)    /
+//                          -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. /
+//                          0\Projects\zstack\Samples\SampleApp               /
+//                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cf /
+//                          g" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\Source\DCMotor.c" -D   /
+//                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D           /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -lC "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\L /
+//                          ist\" -lA "C:\Texas Instruments\ZStack-CC2530-2.3 /
+//                          .0-1.4.0\Projects\zstack\Samples\SampleApp        /
+//                          _02\CC2530DB\EndDeviceEB\List\" --diag_suppress   /
+//                          Pe001,Pa010 -o "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\O /
+//                          bj\" -e --debug --core=plain --dptr=16,1          /
+//                          --data_model=large --code_model=banked            /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data_rom --nr_virtual_regs 16   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. /
+//                          0\Projects\zstack\Samples\SampleApp               /
+//                          _02\CC2530DB\" -I "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\SOURCE\"   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. /
+//                          0\Projects\zstack\Samples\SampleApp               /
+//                          _02\CC2530DB\..\..\..\ZMAIN\TI2530DB\" -I         /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\P /
+//                          rojects\zstack\Samples\SampleApp                  /
+//                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I    /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\P /
+//                          rojects\zstack\Samples\SampleApp                  /
+//                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUD /
+//                          E\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0- /
+//                          1.4.0\Projects\zstack\Samples\SampleApp           /
+//                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET /
+//                          \CC2530EB\" -I "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\OSAL\MCU\CCSOC\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\OSAL\INCLUDE\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\AF\" -I "C:\Texas              /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\NWK\" -I "C:\Texas             /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\SEC\" -I "C:\Texas             /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\SAPI\" -I "C:\Texas            /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\SYS\" -I "C:\Texas             /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\STACK\ZDO\" -I "C:\Texas             /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\ZMAC\F8W\" -I "C:\Texas              /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\ZMAC\" -I "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\SERVICES\SADDR\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\SERVICES\SDATA\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\MAC\INCLUDE\" -I "C:\Texas           /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\MAC\HIGH_LEVEL\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I "C:\Texas   /
+//                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zs /
+//                          tack\Samples\SampleApp _02\CC2530DB\..\..\..\..\. /
+//                          .\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\"    /
+//                          -Ohz                                              /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr /
+//                          ojects\zstack\Samples\SampleApp                   /
+//                          _02\CC2530DB\EndDeviceEB\List\DCMotor.s51         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME DCMotor
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??ControlDC?relay
+        FUNCTION ??ControlDC?relay,0203H
+        PUBLIC ??InitDC?relay
+        FUNCTION ??InitDC?relay,0203H
+        PUBLIC ??Init_Timer1?relay
+        FUNCTION ??Init_Timer1?relay,0203H
+        PUBWEAK `??Timer1_Sevice??INTVEC 75`
+        PUBLIC ControlDC
+        FUNCTION ControlDC,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC InitDC
+        FUNCTION InitDC,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC Init_Timer1
+        FUNCTION Init_Timer1,0201H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBWEAK T1CC0H
+        PUBWEAK T1CC0L
+        PUBWEAK T1CCTL0
+        PUBWEAK T1CTL
+        PUBWEAK T1STAT
+        PUBLIC Timer1_Sevice
+        FUNCTION Timer1_Sevice,0231H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 5, STACK
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_P1
+        PUBWEAK _A_TIMIF
+        PUBLIC pwm_duy
+        PUBLIC pwm_period
+        PUBLIC t_count
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+ControlDC           SYMBOL "ControlDC"
+??ControlDC?relay   SYMBOL "?relay", ControlDC
+InitDC              SYMBOL "InitDC"
+??InitDC?relay      SYMBOL "?relay", InitDC
+Init_Timer1         SYMBOL "Init_Timer1"
+??Init_Timer1?relay SYMBOL "?relay", Init_Timer1
+Timer1_Sevice       SYMBOL "Timer1_Sevice"
+`??Timer1_Sevice??INTVEC 75` SYMBOL "??INTVEC 75", Timer1_Sevice
+
+// C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp _02\Source\DCMotor.c
+//    1 #include "DCMotor.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0afH
+// unsigned char volatile __sfr T1STAT
+T1STAT:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d8H
+// union <unnamed> volatile __sfr _A_TIMIF
+_A_TIMIF:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0daH
+// unsigned char volatile __sfr T1CC0L
+T1CC0L:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0dbH
+// unsigned char volatile __sfr T1CC0H
+T1CC0H:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e4H
+// unsigned char volatile __sfr T1CTL
+T1CTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e5H
+// unsigned char volatile __sfr T1CCTL0
+T1CCTL0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//    2 
+//    3 void ControlDC(uchar PWM,uchar direction);
+//    4 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//    5 unsigned char pwm_period = 100;     //定义PWM的周期
+pwm_period:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for pwm_period>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    6 unsigned char pwm_duy;              //定义PWM的占空比
+pwm_duy:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    7 unsigned char t_count = 0;          //间隔定时次数累计
+t_count:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//    8 
+//    9 
+//   10 /*=================定时器1初始化函数=====================
+//   11 功能：初始化定时器1
+//   12       使用内部16MHz晶振，定时周期1ms，
+//   13       使用模模式，开启通道0的输出比较模式，
+//   14       分频系数8，打开相应的定时中断
+//   15 ========================================================*/
+//   16 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   17 void Init_Timer1()
+Init_Timer1:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Init_Timer1
+        CODE
+//   18 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   19   /*=内部16MHz晶振8分频定时0.05ms的最大计数值为*/
+//   20   T1CC0L = 0x64;    //设置最大计数值的低8位
+        MOV     0xda,#0x64
+//   21   T1CC0H = 0x00;    //设置最大计数值的高8位
+        MOV     0xdb,#0x0
+//   22   //000000011001000 FFFF    
+//   23   //                 65,535
+//   24   T1CCTL0 |= 0x04;  //开启通道0的输出比较模式
+        ORL     0xe5,#0x4
+//   25   T1IE = 1;         //使能定时器1中断
+        SETB    0xb8.1
+//   26   T1OVFIM = 1;      //使能定时器1溢出中断
+        SETB    0xd8.6
+//   27   EA = 1;           //使能总中断         0.0
+        SETB    0xa8.7
+//   28   T1CTL = 0x06;     //分频系数是8,模模式 0.0005ms
+        MOV     0xe4,#0x6
+//   29 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE T1CC0L
+        REQUIRE T1CC0H
+        REQUIRE T1CCTL0
+        REQUIRE _A_IEN1
+        REQUIRE _A_TIMIF
+        REQUIRE _A_IEN0
+        REQUIRE T1CTL
+//   30 
+//   31 /*================定时器1中断服务函数====================
+//   32 功能：1ms间隔定时中断服务函数
+//   33       对间隔定时次数进行累加，即t_count++
+//   34       t_count < pwm_duy, 输出高电平
+//   35       pwm_duy < t_count < pwm_period, 输出低电平
+//   36       t_count = pwm_period，t_count清0，输出高电平
+//   37       每完成一个PWM改变一个占空比，实现呼吸灯
+//   38 ========================================================*/
+//   39 #pragma vector = T1_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   40 __interrupt void Timer1_Sevice()
+Timer1_Sevice:
+        CFI Block cfiBlock1 Using cfiCommon1
+        CFI Function Timer1_Sevice
+        CODE
+//   41 {
+        PUSH    A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH    PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV     A,R0
+        CFI R0 A
+        PUSH    A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        ; Saved register size: 5
+        ; Auto size: 0
+//   42   T1STAT &= ~0x01;        //清除定时器1通道0中断标志
+        ANL     0xaf,#0xfe
+//   43   t_count++;              //对间隔定时次数进行累加
+        MOV     DPTR,#t_count
+        MOVX    A,@DPTR
+        INC     A
+        MOVX    @DPTR,A
+//   44   if(t_count < pwm_duy)            //高电平周期到
+        MOV     DPTR,#pwm_duy
+        LCALL   ?Subroutine0
+??CrossCallReturnLabel_0:
+        JNC     ??Timer1_Sevice_0
+//   45   {
+//   46     DCMotor_PIN1 = 1;                     
+        SETB    0x90.2
+        SJMP    ??Timer1_Sevice_1
+//   47   }
+//   48   else if(t_count < pwm_period)   //低电平周期到
+??Timer1_Sevice_0:
+        MOV     DPTR,#pwm_period
+        LCALL   ?Subroutine0
+??CrossCallReturnLabel_1:
+        JNC     ??Timer1_Sevice_2
+//   49   {
+//   50     DCMotor_PIN1 = 0;                     
+        CLR     0x90.2
+        SJMP    ??Timer1_Sevice_1
+//   51   }
+//   52   else                  //准备开始下一个PWM输出
+//   53   {
+//   54     DCMotor_PIN1 = 1;
+??Timer1_Sevice_2:
+        SETB    0x90.2
+//   55     t_count = 0;        //间隔定时累加清0
+        CLR     A
+        MOVX    @DPTR,A
+//   56    // pwm_duy--;
+//   57    // if(pwm_duy == 1)
+//   58     //{
+//   59      // pwm_duy = 90;
+//   60    // }
+//   61   }
+//   62 }
+??Timer1_Sevice_1:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-6
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-5
+        POP     A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV     R0,A
+        CFI R0 SameValue
+        POP     PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP     A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI
+        CFI EndBlock cfiBlock1
+        REQUIRE T1STAT
+        REQUIRE _A_P1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiCond2 Using cfiCommon1
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI A Frame(CFA_SP, 3)
+        CFI PSW Frame(CFA_SP, 4)
+        CFI R0 Frame(CFA_SP, 5)
+        CFI DPL0 Frame(CFA_SP, 6)
+        CFI DPH0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        CFI Block cfiCond3 Using cfiCommon1
+        CFI (cfiCond3) NoFunction
+        CFI (cfiCond3) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond3) A Frame(CFA_SP, 3)
+        CFI (cfiCond3) PSW Frame(CFA_SP, 4)
+        CFI (cfiCond3) R0 Frame(CFA_SP, 5)
+        CFI (cfiCond3) DPL0 Frame(CFA_SP, 6)
+        CFI (cfiCond3) DPH0 Frame(CFA_SP, 7)
+        CFI (cfiCond3) CFA_SP SP+-7
+        CFI Block cfiPicker4 Using cfiCommon1
+        CFI (cfiPicker4) NoFunction
+        CFI (cfiPicker4) Picker
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     DPTR,#t_count
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,R0
+        RET
+        CFI EndBlock cfiCond2
+        CFI EndBlock cfiCond3
+        CFI EndBlock cfiPicker4
+//   63 
+//   64 
+//   65 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   66 void InitDC(void){
+InitDC:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function InitDC
+        CODE
+        ; Saved register size: 0
+        ; Auto size: 0
+//   67 
+//   68     P1DIR |= 0x0c;    
+        ORL     0xfe,#0xc
+//   69     P1SEL &= ~0x0c;
+        ANL     0xf4,#0xf3
+//   70 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+        REQUIRE P1DIR
+        REQUIRE P1SEL
+//   71 
+//   72 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   73 void ControlDC(uchar PWM,uchar direction){
+ControlDC:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function ControlDC
+        CODE
+        FUNCALL ControlDC, InitDC
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+        MOV     A,R2
+        MOV     R7,A
+//   74     InitDC();
+        ; Setup parameters for call to function InitDC
+        LCALL   ??InitDC?relay
+//   75     DCMotor_PIN2 = direction;
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.0
+        MOV     0x90.3,C
+//   76     pwm_duy = PWM;
+        MOV     A,R6
+        MOV     DPTR,#pwm_duy
+        MOVX    @DPTR,A
+//   77     //Init_Timer1();
+//   78 
+//   79 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P1
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 75
+`??Timer1_Sevice??INTVEC 75`:
+        LJMP       (Timer1_Sevice)
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for pwm_period>`:
+        DATA8
+        DB 100
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Init_Timer1?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Init_Timer1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??InitDC?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    InitDC
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ControlDC?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ControlDC
+
+        END
+// 
+// 57 bytes in segment BANKED_CODE
+// 18 bytes in segment BANK_RELAYS
+//  3 bytes in segment INTVEC
+// 69 bytes in segment NEAR_CODE
+// 11 bytes in segment SFR_AN
+//  1 byte  in segment XDATA_I
+//  1 byte  in segment XDATA_ID
+//  2 bytes in segment XDATA_Z
+// 
+// 145 bytes of CODE  memory (+  3 bytes shared)
+//   0 bytes of DATA  memory (+ 11 bytes shared)
+//   3 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

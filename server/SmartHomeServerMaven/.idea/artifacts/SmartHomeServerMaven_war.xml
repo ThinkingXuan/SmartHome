@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="SmartHomeServerMaven:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SmartHomeServer.war">
+      <element id="artifact" artifact-name="SmartHomeServerMaven:war exploded" />
+    </root>
+  </artifact>
+</component>

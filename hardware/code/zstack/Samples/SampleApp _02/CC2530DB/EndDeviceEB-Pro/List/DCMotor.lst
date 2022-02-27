@@ -1,0 +1,222 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         16/Apr/2020  14:02:51 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\Source\DCMotor.c                               #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg #
+#                          " (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR    #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\Source\DCMotor.c" -D ZIGBEEPRO -D              #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\EndDeviceEB-Pro\List\" -lA "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB-Pro #
+#                          \List\" --diag_suppress Pe001,Pa010 -o "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB-Pro #
+#                          \Obj\" -e --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp _02\CC2530DB\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\SOURCE\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\..\..\..\ZMAIN\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I     #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CC #
+#                          SOC\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUD #
+#                          E\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1 #
+#                          .4.0\Projects\zstack\Samples\SampleApp             #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ #
+#                          " -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4 #
+#                          .0\Projects\zstack\Samples\SampleApp               #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SD #
+#                          ATA\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE #
+#                          VEL\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\SINGLE_CHIP\" -Ohz --require_prototypes   #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB-Pro\List\DCMotor.lst      #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB-Pro\Obj\DCMotor.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp _02\Source\DCMotor.c
+      1          #include "DCMotor.h"
+      2          
+      3          void ControlDC(uchar PWM,uchar direction);
+      4          
+      5          unsigned char pwm_period = 100;     //定义PWM的周期
+      6          unsigned char pwm_duy;              //定义PWM的占空比
+      7          unsigned char t_count = 0;          //间隔定时次数累计
+      8          
+      9          
+     10          /*=================定时器1初始化函数=====================
+     11          功能：初始化定时器1
+     12                使用内部16MHz晶振，定时周期1ms，
+     13                使用模模式，开启通道0的输出比较模式，
+     14                分频系数8，打开相应的定时中断
+     15          ========================================================*/
+     16          
+     17          void Init_Timer1()
+                      ^
+Error[Pa045]: function "Init_Timer1" has no prototype
+     18          {
+     19            /*=内部16MHz晶振8分频定时0.05ms的最大计数值为*/
+     20            T1CC0L = 0x64;    //设置最大计数值的低8位
+     21            T1CC0H = 0x00;    //设置最大计数值的高8位
+     22            //000000011001000 FFFF    
+     23            //                 65,535
+     24            T1CCTL0 |= 0x04;  //开启通道0的输出比较模式
+     25            T1IE = 1;         //使能定时器1中断
+     26            T1OVFIM = 1;      //使能定时器1溢出中断
+     27            EA = 1;           //使能总中断         0.0
+     28            T1CTL = 0x06;     //分频系数是8,模模式 0.0005ms
+     29          }
+     30          
+     31          /*================定时器1中断服务函数====================
+     32          功能：1ms间隔定时中断服务函数
+     33                对间隔定时次数进行累加，即t_count++
+     34                t_count < pwm_duy, 输出高电平
+     35                pwm_duy < t_count < pwm_period, 输出低电平
+     36                t_count = pwm_period，t_count清0，输出高电平
+     37                每完成一个PWM改变一个占空比，实现呼吸灯
+     38          ========================================================*/
+     39          #pragma vector = T1_VECTOR
+     40          __interrupt void Timer1_Sevice()
+                                  ^
+Error[Pa045]: function "Timer1_Sevice" has no prototype
+     41          {
+     42            T1STAT &= ~0x01;        //清除定时器1通道0中断标志
+     43            t_count++;              //对间隔定时次数进行累加
+     44            if(t_count < pwm_duy)            //高电平周期到
+     45            {
+     46              DCMotor_PIN1 = 1;                     
+     47            }
+     48            else if(t_count < pwm_period)   //低电平周期到
+     49            {
+     50              DCMotor_PIN1 = 0;                     
+     51            }
+     52            else                  //准备开始下一个PWM输出
+     53            {
+     54              DCMotor_PIN1 = 1;
+     55              t_count = 0;        //间隔定时累加清0
+     56             // pwm_duy--;
+     57             // if(pwm_duy == 1)
+     58              //{
+     59               // pwm_duy = 90;
+     60             // }
+     61            }
+     62          }
+     63          
+     64          
+     65          
+     66          void InitDC(void){
+                      ^
+Error[Pa045]: function "InitDC" has no prototype
+     67          
+     68              P1DIR |= 0x0c;    
+     69              P1SEL &= ~0x0c;
+     70          }
+     71          
+     72          
+     73          void ControlDC(uchar PWM,uchar direction){
+     74              InitDC();
+     75              DCMotor_PIN2 = direction;
+     76              pwm_duy = PWM;
+     77              //Init_Timer1();
+     78              
+     79          }
+
+Errors: 3
+Warnings: none

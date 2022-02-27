@@ -1,0 +1,469 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         24/Apr/2020  22:30:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\Source\DCMotor.c                               #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg #
+#                          " (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR    #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\Source\DCMotor.c" -D NWK_AUTO_POLL -D          #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\Lis #
+#                          t\" -lA "C:\Texas Instruments\ZStack-CC2530-2.3.0- #
+#                          1.4.0\Projects\zstack\Samples\SampleApp            #
+#                          _02\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\Obj #
+#                          \" -e --debug --core=plain --dptr=16,1             #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp _02\CC2530DB\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\SOURCE\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\..\..\..\ZMAIN\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I     #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CC #
+#                          SOC\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUD #
+#                          E\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1 #
+#                          .4.0\Projects\zstack\Samples\SampleApp             #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ #
+#                          " -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4 #
+#                          .0\Projects\zstack\Samples\SampleApp               #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SD #
+#                          ATA\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE #
+#                          VEL\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\SINGLE_CHIP\" -Ohz                        #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB\List\DCMotor.lst          #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB\Obj\DCMotor.r51           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp _02\Source\DCMotor.c
+      1          #include "DCMotor.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xaf
+   \   unsigned char volatile __sfr T1STAT
+   \                     T1STAT:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd8
+   \   union <unnamed> volatile __sfr _A_TIMIF
+   \                     _A_TIMIF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xda
+   \   unsigned char volatile __sfr T1CC0L
+   \                     T1CC0L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdb
+   \   unsigned char volatile __sfr T1CC0H
+   \                     T1CC0H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe5
+   \   unsigned char volatile __sfr T1CCTL0
+   \                     T1CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          
+      3          void ControlDC(uchar PWM,uchar direction);
+      4          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+      5          unsigned char pwm_period = 100;     //定义PWM的周期
+   \                     pwm_period:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for pwm_period>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      6          unsigned char pwm_duy;              //定义PWM的占空比
+   \                     pwm_duy:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          unsigned char t_count = 0;          //间隔定时次数累计
+   \                     t_count:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+      8          
+      9          
+     10          /*=================定时器1初始化函数=====================
+     11          功能：初始化定时器1
+     12                使用内部16MHz晶振，定时周期1ms，
+     13                使用模模式，开启通道0的输出比较模式，
+     14                分频系数8，打开相应的定时中断
+     15          ========================================================*/
+     16          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          void Init_Timer1()
+   \                     Init_Timer1:
+     18          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19            /*=内部16MHz晶振8分频定时0.05ms的最大计数值为*/
+     20            T1CC0L = 0x64;    //设置最大计数值的低8位
+   \   000000   75DA64       MOV     0xda,#0x64
+     21            T1CC0H = 0x00;    //设置最大计数值的高8位
+   \   000003   75DB00       MOV     0xdb,#0x0
+     22            //000000011001000 FFFF    
+     23            //                 65,535
+     24            T1CCTL0 |= 0x04;  //开启通道0的输出比较模式
+   \   000006   43E504       ORL     0xe5,#0x4
+     25            T1IE = 1;         //使能定时器1中断
+   \   000009   D2B9         SETB    0xb8.1
+     26            T1OVFIM = 1;      //使能定时器1溢出中断
+   \   00000B   D2DE         SETB    0xd8.6
+     27            EA = 1;           //使能总中断         0.0
+   \   00000D   D2AF         SETB    0xa8.7
+     28            T1CTL = 0x06;     //分频系数是8,模模式 0.0005ms
+   \   00000F   75E406       MOV     0xe4,#0x6
+     29          }
+   \   000012   02....       LJMP    ?BRET
+   \   000015                REQUIRE T1CC0L
+   \   000015                REQUIRE T1CC0H
+   \   000015                REQUIRE T1CCTL0
+   \   000015                REQUIRE _A_IEN1
+   \   000015                REQUIRE _A_TIMIF
+   \   000015                REQUIRE _A_IEN0
+   \   000015                REQUIRE T1CTL
+     30          
+     31          /*================定时器1中断服务函数====================
+     32          功能：1ms间隔定时中断服务函数
+     33                对间隔定时次数进行累加，即t_count++
+     34                t_count < pwm_duy, 输出高电平
+     35                pwm_duy < t_count < pwm_period, 输出低电平
+     36                t_count = pwm_period，t_count清0，输出高电平
+     37                每完成一个PWM改变一个占空比，实现呼吸灯
+     38          ========================================================*/
+     39          #pragma vector = T1_VECTOR
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+     40          __interrupt void Timer1_Sevice()
+   \                     Timer1_Sevice:
+     41          {
+   \   000000   C0E0         PUSH    A
+   \   000002   C0D0         PUSH    PSW
+   \   000004   E8           MOV     A,R0
+   \   000005   C0E0         PUSH    A
+   \   000007   C082         PUSH    DPL
+   \   000009   C083         PUSH    DPH
+   \   00000B                ; Saved register size: 5
+   \   00000B                ; Auto size: 0
+     42            T1STAT &= ~0x01;        //清除定时器1通道0中断标志
+   \   00000B   53AFFE       ANL     0xaf,#0xfe
+     43            t_count++;              //对间隔定时次数进行累加
+   \   00000E   90....       MOV     DPTR,#t_count
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   04           INC     A
+   \   000013   F0           MOVX    @DPTR,A
+     44            if(t_count < pwm_duy)            //高电平周期到
+   \   000014   90....       MOV     DPTR,#pwm_duy
+   \   000017   12....       LCALL   ?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   00001A   5004         JNC     ??Timer1_Sevice_0
+     45            {
+     46              DCMotor_PIN1 = 1;                     
+   \   00001C   D292         SETB    0x90.2
+   \   00001E   8010         SJMP    ??Timer1_Sevice_1
+     47            }
+     48            else if(t_count < pwm_period)   //低电平周期到
+   \                     ??Timer1_Sevice_0:
+   \   000020   90....       MOV     DPTR,#pwm_period
+   \   000023   12....       LCALL   ?Subroutine0
+   \                     ??CrossCallReturnLabel_1:
+   \   000026   5004         JNC     ??Timer1_Sevice_2
+     49            {
+     50              DCMotor_PIN1 = 0;                     
+   \   000028   C292         CLR     0x90.2
+   \   00002A   8004         SJMP    ??Timer1_Sevice_1
+     51            }
+     52            else                  //准备开始下一个PWM输出
+     53            {
+     54              DCMotor_PIN1 = 1;
+   \                     ??Timer1_Sevice_2:
+   \   00002C   D292         SETB    0x90.2
+     55              t_count = 0;        //间隔定时累加清0
+   \   00002E   E4           CLR     A
+   \   00002F   F0           MOVX    @DPTR,A
+     56             // pwm_duy--;
+     57             // if(pwm_duy == 1)
+     58              //{
+     59               // pwm_duy = 90;
+     60             // }
+     61            }
+     62          }
+   \                     ??Timer1_Sevice_1:
+   \   000030   D083         POP     DPH
+   \   000032   D082         POP     DPL
+   \   000034   D0E0         POP     A
+   \   000036   F8           MOV     R0,A
+   \   000037   D0D0         POP     PSW
+   \   000039   D0E0         POP     A
+   \   00003B   32           RETI
+   \   00003C                REQUIRE T1STAT
+   \   00003C                REQUIRE _A_P1
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   90....       MOV     DPTR,#t_count
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   C3           CLR     C
+   \   000007   98           SUBB    A,R0
+   \   000008   22           RET
+     63          
+     64          
+     65          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     66          void InitDC(void){
+   \                     InitDC:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     67          
+     68              P1DIR |= 0x0c;    
+   \   000000   43FE0C       ORL     0xfe,#0xc
+     69              P1SEL &= ~0x0c;
+   \   000003   53F4F3       ANL     0xf4,#0xf3
+     70          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P1DIR
+   \   000009                REQUIRE P1SEL
+     71          
+     72          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void ControlDC(uchar PWM,uchar direction){
+   \                     ControlDC:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+     74              InitDC();
+   \   000009                ; Setup parameters for call to function InitDC
+   \   000009   12....       LCALL   ??InitDC?relay
+     75              DCMotor_PIN2 = direction;
+   \   00000C   EF           MOV     A,R7
+   \   00000D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000F   9293         MOV     0x90.3,C
+     76              pwm_duy = PWM;
+   \   000011   EE           MOV     A,R6
+   \   000012   90....       MOV     DPTR,#pwm_duy
+   \   000015   F0           MOVX    @DPTR,A
+     77              //Init_Timer1();
+     78          
+     79          }
+   \   000016   7F01         MOV     R7,#0x1
+   \   000018   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00001B                REQUIRE _A_P1
+
+   \                                 In  segment INTVEC, offset 0x4b, root
+   \                     `??Timer1_Sevice??INTVEC 75`:
+   \   00004B   02....       LJMP       (Timer1_Sevice)
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for pwm_period>`:
+   \   000000   64           DB 100
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_Timer1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_Timer1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitDC?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitDC
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ControlDC?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ControlDC
+
+   Maximum stack usage in bytes:
+
+     Function      ISTACK PSTACK XSTACK
+     --------      ------ ------ ------
+     ControlDC         0      0      9
+       -> InitDC       0      0     18
+     InitDC            0      0      9
+     Init_Timer1       0      0      0
+     Timer1_Sevice     5      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P1                            1
+     _A_IEN0                          1
+     T1STAT                           1
+     _A_IEN1                          1
+     _A_TIMIF                         1
+     T1CC0L                           1
+     T1CC0H                           1
+     T1CTL                            1
+     T1CCTL0                          1
+     P1SEL                            1
+     P1DIR                            1
+     pwm_period                       1
+     pwm_duy                          1
+     t_count                          1
+     Init_Timer1                     21
+     Timer1_Sevice                   60
+     ?Subroutine0                     9
+     InitDC                           9
+     ControlDC                       27
+     ??Timer1_Sevice??INTVEC 75       3
+     ?<Initializer for pwm_period>    1
+     ??Init_Timer1?relay              6
+     ??InitDC?relay                   6
+     ??ControlDC?relay                6
+
+ 
+ 57 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  3 bytes in segment INTVEC
+ 69 bytes in segment NEAR_CODE
+ 11 bytes in segment SFR_AN
+  1 byte  in segment XDATA_I
+  1 byte  in segment XDATA_ID
+  2 bytes in segment XDATA_Z
+ 
+ 145 bytes of CODE  memory (+  3 bytes shared)
+   0 bytes of DATA  memory (+ 11 bytes shared)
+   3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

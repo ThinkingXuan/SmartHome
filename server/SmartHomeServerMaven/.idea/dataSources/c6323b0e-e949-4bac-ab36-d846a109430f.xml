@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="smart_home@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="smart_home">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="byte_market"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="known"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="secondhand"/>
+    <schema id="9" parent="1" name="test"/>
+    <table id="10" parent="2" name="average_day"/>
+    <table id="11" parent="2" name="average_hour"/>
+    <table id="12" parent="2" name="average_min"/>
+    <table id="13" parent="2" name="average_month"/>
+    <table id="14" parent="2" name="average_week"/>
+    <table id="15" parent="2" name="average_year"/>
+    <table id="16" parent="2" name="device_data"/>
+    <table id="17" parent="2" name="sensor_data"/>
+    <table id="18" parent="2" name="users"/>
+    <column id="19" parent="10" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="10" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="10" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="25" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="11" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="11" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="11" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+    </column>
+    <column id="31" parent="11" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="32" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="12" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="12" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="12" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="12" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="12" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="12" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="39" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="13" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="13" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="13" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="13" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="13" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="46" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="14" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="14" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="14" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="14" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="14" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="14" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="53" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="54" parent="15" name="average_id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="15" name="average_temp">
+      <Position>2</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="15" name="average_hum">
+      <Position>3</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="15" name="average_mq2">
+      <Position>4</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="15" name="average_beam">
+      <Position>5</Position>
+      <DataType>float(10,4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="15" name="average_time">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="60" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>average_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="16" name="userId">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="16" name="controlTime">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="16" name="deviceType">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="16" name="controlMode">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="16" name="controlAction">
+      <Position>6</Position>
+      <DataType>enum(&apos;close&apos;, &apos;open&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="16" name="controlReason">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="68" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="69" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="17" name="time">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="71" parent="17" name="temperature">
+      <Position>3</Position>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="72" parent="17" name="humidity">
+      <Position>4</Position>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="73" parent="17" name="mq2">
+      <Position>5</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="74" parent="17" name="beam">
+      <Position>6</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <key id="75" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="76" parent="18" name="userId">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="18" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="18" name="userPassword">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="18" name="userPhone">
+      <Position>4</Position>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="18" name="userEmail">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="18" name="loginTime">
+      <Position>6</Position>
+      <DataType>datetime(6)|0</DataType>
+    </column>
+    <column id="82" parent="18" name="ipAddress">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="83" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userId</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,403 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         16/Apr/2020  14:01:46 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\Source\DataDeal.c                              #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg #
+#                          " (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR    #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\Source\DataDeal.c" -D ZIGBEEPRO -D             #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D            #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -lC "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\EndDeviceEB-Pro\List\" -lA "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB-Pro #
+#                          \List\" --diag_suppress Pe001,Pa010 -o "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB-Pro #
+#                          \Obj\" -e --debug --core=plain --dptr=16,1         #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp _02\CC2530DB\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\SOURCE\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\..\..\..\ZMAIN\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I     #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CC #
+#                          SOC\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUD #
+#                          E\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1 #
+#                          .4.0\Projects\zstack\Samples\SampleApp             #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ #
+#                          " -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4 #
+#                          .0\Projects\zstack\Samples\SampleApp               #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SD #
+#                          ATA\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE #
+#                          VEL\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\SINGLE_CHIP\" -Ohz --require_prototypes   #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB-Pro\List\DataDeal.lst     #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB-Pro\Obj\DataDeal.r51      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp _02\Source\DataDeal.c
+      1          /**
+      2          *数据处理模块,用户获取所有传感器数值
+      3          */
+      4          
+      5          #include "DHT11.H"
+      6          #include "MQ_2.H"
+      7          #include "LightSensor.H"
+      8          #include "Beep.H"
+      9          #include "Relay.H"
+     10          #include "DCMotor.H"
+     11          
+     12          #define uchar unsigned char
+     13          
+     14          void getDHT11(uchar temp[4]);                //温湿传感启动
+     15          void getMQ_2(uchar TxBuf[5]);
+     16          void getLightSensor(uchar buff[9]);
+     17          void controlBeep(uchar flag);
+     18          void controlRelay(uchar flag);
+     19          void ControlDCMotor(uchar pwm,uchar direction);
+     20          
+     21          //获取温湿度  传入数组，前两个字符为温度，后两个字符为湿度
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     22          void getDHT11(uchar tempH[4]){
+   \                     getDHT11:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+     23             unsigned char temp[2],humi[2];
+     24             char r_val;
+     25              //获取温湿度
+     26             r_val = dht11_value(temp , humi , DHT11_STRING);
+     27             if(r_val == 0)
+   \   00000E                ; Setup parameters for call to function dht11_value
+   \   00000E   7901         MOV     R1,#0x1
+   \   000010   85..82       MOV     DPL,?XSP + 0
+   \   000013   85..83       MOV     DPH,?XSP + 1
+   \   000016   AC82         MOV     R4,DPL
+   \   000018   AD83         MOV     R5,DPH
+   \   00001A   7402         MOV     A,#0x2
+   \   00001C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001F   AA82         MOV     R2,DPL
+   \   000021   AB83         MOV     R3,DPH
+   \   000023   12....       LCALL   ??dht11_value?relay
+   \   000026   E9           MOV     A,R1
+   \   000027   702A         JNZ     ??getDHT11_0
+     28             {
+     29                    tempH[0] = temp[0];
+   \   000029   7402         MOV     A,#0x2
+   \   00002B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   8E82         MOV     DPL,R6
+   \   000031   8F83         MOV     DPH,R7
+   \   000033   F0           MOVX    @DPTR,A
+     30                    tempH[1] = temp[1];
+   \   000034   7403         MOV     A,#0x3
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00003C   F0           MOVX    @DPTR,A
+     31                    tempH[2] = humi[0];
+   \   00003D   85..82       MOV     DPL,?XSP + 0
+   \   000040   85..83       MOV     DPH,?XSP + 1
+   \   000043   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000046   A3           INC     DPTR
+   \   000047   F0           MOVX    @DPTR,A
+     32                    tempH[3] = humi[1];
+   \   000048   7401         MOV     A,#0x1
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   12....       LCALL   ?Subroutine3 & 0xFFFF
+     33               }
+   \                     ??CrossCallReturnLabel_2:
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   F0           MOVX    @DPTR,A
+     34          }
+   \                     ??getDHT11_0:
+   \   000053   7404         MOV     A,#0x4
+   \   000055   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000058                REQUIRE ?Subroutine0
+   \   000058                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   8E82         MOV     DPL,R6
+   \   000003   8F83         MOV     DPH,R7
+   \   000005   A3           INC     DPTR
+   \   000006   22           RET
+     35          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void getMQ_2(uchar TxBuf[5]){
+   \                     getMQ_2:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     37              MQInit(TxBuf);
+   \   000004                ; Setup parameters for call to function MQInit
+   \   000004   12....       LCALL   ??MQInit?relay
+     38          }
+   \   000007                REQUIRE ?Subroutine1
+   \   000007                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     39          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     40          void getLightSensor(uchar buff[5]){
+   \                     getLightSensor:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     41              LightSensorInit(buff);
+   \   000004                ; Setup parameters for call to function LightSensorInit
+   \   000004   12....       LCALL   ??LightSensorInit?relay
+     42          }
+   \   000007   80..         SJMP    ?Subroutine1
+     43          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void controlBeep(uchar flag){
+   \                     controlBeep:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     45              ControlB(flag);
+   \   000006                ; Setup parameters for call to function ControlB
+   \   000006   FA           MOV     R2,A
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   12....       LCALL   ??ControlB?relay
+     46          }
+   \   00000C                REQUIRE ?Subroutine2
+   \   00000C                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          void controlRelay(uchar flag){
+   \                     controlRelay:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     48              ControlR(flag);
+   \   000006                ; Setup parameters for call to function ControlR
+   \   000006   FA           MOV     R2,A
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   12....       LCALL   ??ControlR?relay
+     49          }
+   \   00000C   80..         SJMP    ?Subroutine2
+     50          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          void ControlDCMotor(uchar pwm,uchar direction){
+   \                     ControlDCMotor:
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     52              //InitDC();
+     53              ControlDC(pwm,direction);
+   \   000005                ; Setup parameters for call to function ControlDC
+   \   000005   12....       LCALL   ??ControlDC?relay
+     54          }
+   \   000008   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??getDHT11?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    getDHT11
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??getMQ_2?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    getMQ_2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??getLightSensor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    getLightSensor
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??controlBeep?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    controlBeep
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??controlRelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    controlRelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ControlDCMotor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ControlDCMotor
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     ControlDCMotor           0      0      9
+       -> ControlDC           0      0     18
+     controlBeep              0      0     10
+       -> ControlB            0      0     20
+     controlRelay             0      0     10
+       -> ControlR            0      0     20
+     getDHT11                 1      0     13
+       -> dht11_value         0      0     26
+     getLightSensor           2      0      0
+       -> LightSensorInit     4      0      0
+     getMQ_2                  2      0      0
+       -> MQInit              4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label         Bytes
+     --------------         -----
+     getDHT11                 88
+     ?Subroutine0              5
+     ?Subroutine3              7
+     getMQ_2                   7
+     ?Subroutine1              7
+     getLightSensor            9
+     controlBeep              12
+     ?Subroutine2              5
+     controlRelay             14
+     ControlDCMotor           10
+     ??getDHT11?relay          6
+     ??getMQ_2?relay           6
+     ??getLightSensor?relay    6
+     ??controlBeep?relay       6
+     ??controlRelay?relay      6
+     ??ControlDCMotor?relay    6
+
+ 
+ 164 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+ 
+ 200 bytes of CODE memory
+
+Errors: none
+Warnings: none

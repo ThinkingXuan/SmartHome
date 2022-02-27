@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间应该是对应接口的包名+接口名 -->
+<mapper namespace="com.nuist.you.mapper.UserDao">
+    <insert id="insertUser" parameterType="com.nuist.you.bean.Users">
+        INSERT INTO users(userId,userPhone,userEmail,userPassword,loginTime,ipAddress) VALUES(
+        <if test="#{userId!=null}">
+            #{userId},
+        </if>
+        <if test="#{userPhone!=null}">
+            #{userPhone},
+        </if>
+        <if test="#{userEmail!=null}">
+            #{userEmail},
+        </if>
+        <if test="#{userPassword!=null}">
+            #{userPassword},
+        </if>
+        <if test="#{loginTime!=null}">
+            #{loginTime},
+        </if>
+        <if test="#{ipAddress!=null}">
+            #{ipAddress}
+        </if>
+        )
+
+    </insert>
+
+    <select id="selectUser" parameterType="com.nuist.you.bean.Users" resultType="com.nuist.you.bean.Users">
+
+        SELECT * FROM users
+        <where>
+            <if test="userId!=null">
+                and userId = #{userId}
+            </if>
+            <if test="userPhone!=null">
+                and userPhone = #{userPhone}
+            </if>
+            <if test="userEmail!=null ">
+                and userEmail = #{userEmail}
+            </if>
+            <if test="userPassword!=null">
+                and userPassword = #{userPassword}
+            </if>
+
+            <if test="loginTime!=null">
+                and register_time = #{loginTime}
+            </if>
+            <if test="ipAddress!=null">
+                and ipAddress = #{ipAddress}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectUserByPhone" resultType="com.nuist.you.bean.Users">
+        select * from users
+        <where>
+            <if test="_parameter!=null">
+                userPhone = #{userPhone}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateUser" parameterType="com.nuist.you.bean.Users">
+        UPDATE users
+        <set>
+
+            <if test="password!=null">
+                userPassword = #{userPassword},
+            </if>
+
+        </set>
+        <where>
+            <if test="userPhone!=null">
+                userPhone = #{userPhone}
+            </if>
+        </where>
+    </update>
+</mapper>

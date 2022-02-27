@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4d8cda86-1f09-40ab-9d87-09a9967b92e1" name="CVM" url="http://140.143.127.174">
+        <fileTransfer host="140.143.127.174" port="22" privateKey="C:\Users\Administrator\Desktop\putty.ppk" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

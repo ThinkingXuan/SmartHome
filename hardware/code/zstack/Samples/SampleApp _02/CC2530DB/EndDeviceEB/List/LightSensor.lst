@@ -1,0 +1,397 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         09/Apr/2020  12:25:48 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\Source\LightSensor.c                           #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg" #
+#                           (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg #
+#                          " (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR    #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\Source\LightSensor.c" -D NWK_AUTO_POLL -D      #
+#                          ZTOOL_P1 -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC  #
+#                          -D LCD_SUPPORTED=DEBUG -lC "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\Lis #
+#                          t\" -lA "C:\Texas Instruments\ZStack-CC2530-2.3.0- #
+#                          1.4.0\Projects\zstack\Samples\SampleApp            #
+#                          _02\CC2530DB\EndDeviceEB\List\" --diag_suppress    #
+#                          Pe001,Pa010 -o "C:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\EndDeviceEB\Obj #
+#                          \" -e --debug --core=plain --dptr=16,1             #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp _02\CC2530DB\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\SOURCE\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SampleApp _02\CC2530DB\..\..\..\ZMAIN\ #
+#                          TI2530DB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MT\" -I     #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CC #
+#                          SOC\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUD #
+#                          E\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1 #
+#                          .4.0\Projects\zstack\Samples\SampleApp             #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ #
+#                          " -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4 #
+#                          .0\Projects\zstack\Samples\SampleApp               #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" #
+#                           -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4. #
+#                          0\Projects\zstack\Samples\SampleApp                #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SampleApp                 #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SampleApp                    #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SA #
+#                          DDR\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SD #
+#                          ATA\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1. #
+#                          4.0\Projects\zstack\Samples\SampleApp              #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE #
+#                          VEL\" -I "C:\Texas Instruments\ZStack-CC2530-2.3.0 #
+#                          -1.4.0\Projects\zstack\Samples\SampleApp           #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\" -I "C:\Texas Instruments\ZStack-CC2530- #
+#                          2.3.0-1.4.0\Projects\zstack\Samples\SampleApp      #
+#                          _02\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\SINGLE_CHIP\" -Ohz                        #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB\List\LightSensor.lst      #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SampleApp                     #
+#                          _02\CC2530DB\EndDeviceEB\Obj\LightSensor.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp _02\Source\LightSensor.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0xb4
+   \   unsigned char volatile __sfr ADCCON1
+   \                     ADCCON1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf2
+   \   unsigned char volatile __sfr ADCCFG
+   \                     ADCCFG:
+   \   000000                DS 1
+      2          #include "LightSensor.H"
+      3          
+      4          #define DATA_PIN_LIGHT P1_6           //定义P1.6口为传感器的输入端
+      5          
+      6          
+      7          //void DelayMS(uint msec)
+      8          //{ 
+      9          //    uint i,j;
+     10              
+     11           //   for (i=0; i<msec; i++)
+     12          //        for (j=0; j<535; j++);
+     13          //}
+     14          
+     15          
+     16          
+     17          //ADC
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          uint ReadLightData( void )
+   \                     ReadLightData:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20           // uint reading = 0;
+     21            
+     22            //P0DIR &= ~0x20;  // 设置P0.5为输入方式
+     23           //asm("NOP");asm("NOP");
+     24            
+     25            /* Clear ADC interrupt flag */
+     26            //ADCIF = 0;
+     27            //ADCCON3 = 0x84;
+     28            
+     29           // /* Wait for the conversion to finish */
+     30            //while ( !ADCIF );
+     31            
+     32            //asm("NOP");asm("NOP");
+     33            
+     34            /* Read the result */
+     35            //reading = ADCL;
+     36            //reading |= (uint) (ADCH << 8);
+     37            //reading >>= 8;
+     38            
+     39              uint reading = 0;
+     40            
+     41            /* Enable channel */
+     42            ADCCFG |= 0x40;  
+   \   000000   43F240       ORL     0xf2,#0x40
+     43            
+     44           
+     45            /* writing to this register starts the extra conversion */
+     46            ADCCON3 = 0x84;// AVDD5 引脚  00： 64 抽取率(7 位ENOB)  0100： AIN4
+   \   000003   75B684       MOV     0xb6,#-0x7c
+     47          
+     48          
+     49            /* Wait for the conversion to be done */
+     50            while (!(ADCCON1 & 0x80));
+   \                     ??ReadLightData_0:
+   \   000006   E5B4         MOV     A,0xb4
+   \   000008   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00000A   50FA         JNC     ??ReadLightData_0
+     51            
+     52            /* Disable channel after done conversion */
+     53            ADCCFG &= (0x40 ^ 0xFF); //按位异或。如1010^1111=0101（二进制）
+   \   00000C   53F2BF       ANL     0xf2,#0xbf
+     54            
+     55            /* Read the result */
+     56            reading = ADCL;
+   \   00000F   E5BA         MOV     A,0xba
+     57            reading |= (uint) (ADCH << 8); 
+     58            
+     59            reading >>= 8;
+     60            
+     61            return (reading);
+   \   000011   E5BB         MOV     A,0xbb
+   \   000013   FA           MOV     R2,A
+   \   000014   E4           CLR     A
+   \   000015   FB           MOV     R3,A
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE ADCCFG
+   \   000019                REQUIRE ADCCON3
+   \   000019                REQUIRE ADCCON1
+   \   000019                REQUIRE ADCL
+   \   000019                REQUIRE ADCH
+     62          }
+     63          
+     64          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     65          void LightSensorInit(uchar str[5]){
+   \                     LightSensorInit:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     66          
+     67            uint value;
+     68            value = ReadLightData();
+   \   000009                ; Setup parameters for call to function ReadLightData
+   \   000009   12....       LCALL   ??ReadLightData?relay
+   \   00000C   8A..         MOV     ?V0 + 0,R2
+   \   00000E   8B..         MOV     ?V0 + 1,R3
+   \   000010   AC..         MOV     R4,?V0 + 0
+   \   000012   AD..         MOV     R5,?V0 + 1
+     69            //sprintf(str, "BRI:%03d ", value);  //专业人员一般用这一条就搞定 下面的语句也一样哦
+     70            str[0] = value / 1000 + '0';
+   \   000014   EC           MOV     A,R4
+   \   000015   F8           MOV     R0,A
+   \   000016   ED           MOV     A,R5
+   \   000017   F9           MOV     R1,A
+   \   000018   7AE8         MOV     R2,#-0x18
+   \   00001A   7B03         MOV     R3,#0x3
+   \   00001C   12....       LCALL   ?US_DIV_MOD
+   \   00001F   E8           MOV     A,R0
+   \   000020   12....       LCALL   ??Subroutine2_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000023   F0           MOVX    @DPTR,A
+     71            str[1] = value / 100 % 10 + '0';
+   \   000024   EC           MOV     A,R4
+   \   000025   F8           MOV     R0,A
+   \   000026   ED           MOV     A,R5
+   \   000027   F9           MOV     R1,A
+   \   000028   7A64         MOV     R2,#0x64
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   12....       LCALL   ?US_DIV_MOD
+   \   00002F   7A0A         MOV     R2,#0xa
+   \   000031   7B00         MOV     R3,#0x0
+   \   000033   12....       LCALL   ?US_DIV_MOD
+   \   000036   EA           MOV     A,R2
+   \   000037   2430         ADD     A,#0x30
+   \   000039   12....       LCALL   ?Subroutine0 & 0xFFFF
+     72            str[2] = value / 10 % 10 + '0';
+   \                     ??CrossCallReturnLabel_0:
+   \   00003C   12....       LCALL   ?US_DIV_MOD
+   \   00003F   7A0A         MOV     R2,#0xa
+   \   000041   7B00         MOV     R3,#0x0
+   \   000043   12....       LCALL   ?US_DIV_MOD
+   \   000046   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000049   A3           INC     DPTR
+   \   00004A   12....       LCALL   ?Subroutine0 & 0xFFFF
+     73            str[3] = value %10 + '0';  
+   \                     ??CrossCallReturnLabel_1:
+   \   00004D   12....       LCALL   ?US_DIV_MOD
+   \   000050   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   A3           INC     DPTR
+   \   000056   F0           MOVX    @DPTR,A
+     74            str[4] = 0; 
+   \   000057   8E82         MOV     DPL,R6
+   \   000059   8F83         MOV     DPH,R7
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   E4           CLR     A
+   \   000060   F0           MOVX    @DPTR,A
+     75          }
+   \   000061   7F02         MOV     R7,#0x2
+   \   000063   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   EA           MOV     A,R2
+   \   000001                REQUIRE ??Subroutine2_0
+   \   000001                ; // Fall through to label ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine2_0:
+   \   000000   2430         ADD     A,#0x30
+   \   000002   8E82         MOV     DPL,R6
+   \   000004   8F83         MOV     DPH,R7
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   A3           INC     DPTR
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   EC           MOV     A,R4
+   \   000003   F8           MOV     R0,A
+   \   000004   ED           MOV     A,R5
+   \   000005   F9           MOV     R1,A
+   \   000006   7A0A         MOV     R2,#0xa
+   \   000008   7B00         MOV     R3,#0x0
+   \   00000A   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadLightData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadLightData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LightSensorInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LightSensorInit
+
+   Maximum stack usage in bytes:
+
+     Function           ISTACK PSTACK XSTACK
+     --------           ------ ------ ------
+     LightSensorInit        1      0     10
+       -> ReadLightData     0      0     20
+     ReadLightData          0      0     10
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     ADCCON1                    1
+     ADCCON3                    1
+     ADCL                       1
+     ADCH                       1
+     ADCCFG                     1
+     ReadLightData             25
+     LightSensorInit          102
+     ?Subroutine1               1
+     ??Subroutine2_0            7
+     ?Subroutine0              11
+     ??ReadLightData?relay      6
+     ??LightSensorInit?relay    6
+
+ 
+ 146 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   5 bytes in segment SFR_AN
+ 
+ 158 bytes of CODE memory
+   0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: none
