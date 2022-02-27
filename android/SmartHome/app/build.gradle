@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'com.mob.sdk'
+
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "2871640f154c8"
+    appSecret "fe003e69499dcfa01a1e2889b774f87f"
+
+    SMSSDK {
+        gui false
+    }
+}
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.nuist.you.smarthome"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //系统组件
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //核心
+    implementation 'com.neovisionaries:nv-websocket-client:2.2'
+    implementation 'org.java-websocket:Java-WebSocket:1.3.0'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.zhpanvip:BannerViewPager:2.7.3'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+
+    //kotlin包
+    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //RxJava 和RxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // Android 支持 Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    //Retrofit的converter和adapter
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    // 支持Gson解析
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //log日志
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    //excel生成
+    implementation 'com.github.zhouzhuo810:ZzExcelCreator:1.0.7'
+
+    //时间选择
+    implementation "com.jzxiang.pickerview:TimePickerDialog:1.0.1"
+
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linear_home_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.nuist.you.smarthome.view.CornerImageView
+                android:id="@+id/banner_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="image_description"
+                android:scaleType="fitXY"
+                android:src="@drawable/home1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/linear_home_image"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card0">
+
+                <!--                <com.nuist.you.smarthome.view.CircleProgress-->
+                <!--                    android:id="@+id/circle_progress_bar"-->
+                <!--                    android:layout_width="200dp"-->
+                <!--                    android:layout_height="200dp"-->
+                <!--                    android:layout_gravity="center_horizontal|center_vertical"-->
+                <!--                    android:layout_marginTop="8dp"-->
+                <!--                    app:antiAlias="true"-->
+                <!--                    app:arcWidth="4dp"-->
+                <!--                    app:bgArcColor="@color/colorSecondaryText"-->
+                <!--                    app:bgArcWidth="4dp"-->
+                <!--                    app:hint="百分比"-->
+                <!--                    app:hintColor="@color/colorWhite"-->
+                <!--                    app:hintSize="20sp"-->
+                <!--                    app:maxValue="100"-->
+                <!--                    app:startAngle="135"-->
+                <!--                    app:sweepAngle="270"-->
+                <!--                    app:textOffsetPercentInRadius="0.5"-->
+                <!--                    app:unit="%"-->
+                <!--                    app:unitColor="@color/colorWhite"-->
+                <!--                    app:unitSize="20sp"-->
+                <!--                    app:value="75"-->
+                <!--                    app:valueColor="@color/colorWhite"-->
+                <!--                    app:valueSize="25sp" />-->
+
+                <TextView
+                    android:id="@+id/tv_data_type_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/living_room"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_temp_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="123"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="60sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="温馨提示"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_tips_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:text="多穿衣服，保暖"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

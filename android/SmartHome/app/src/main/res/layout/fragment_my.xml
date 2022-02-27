@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.my.MyFragment">
+
+    <TextView
+        android:id="@+id/text_my"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_my"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/indicator_view"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_bg_edit"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_my"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/editText_my"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="退出登录"
+        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        android:textColor="@color/colorWhite" />
+</RelativeLayout>

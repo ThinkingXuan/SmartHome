@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <external-files-path  name="home" path="storage/emulated/0/SmartHome"/>-->
+    <!-- 物理路径为Context.getFilesDir() + /files/* -->
+<!--    <files-path path="files" name="files" />-->
+<!--    &lt;!&ndash; 物理路径为Context.getCacheDir() + /files/* &ndash;&gt;-->
+<!--    <cache-path path="files" name="cache" />-->
+<!--    &lt;!&ndash; 物理路径为Environment.getExternalStorageDirectory() + /files/* &ndash;&gt;-->
+<!--    <external-path path="files" name="external" />-->
+<!--    &lt;!&ndash; 物理路径为Context.getExternalFilesDir(String) + /files/* &ndash;&gt;-->
+<!--    <external-files-path path="files" name="externalfiles"/>-->
+<!--    &lt;!&ndash; 物理路径为Context.getExternalCacheDir() + /files/* &ndash;&gt;-->
+<!--    <external-cache-path  path="files" name="externalcache"/>-->
+<!--    &lt;!&ndash; 物理路径为`Context.getExternalMediaDirs() + /files/*, 要求API21+ &ndash;&gt;-->
+<!--    <external-media-path name="externalmedia" path="files" />-->
+    <external-path name="external_files" path="SmartHome" />
+</paths>

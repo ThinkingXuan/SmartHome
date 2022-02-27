@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ed="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/base_toolbar_view" />
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_text_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_login"
+            android:textSize="25dp" />
+
+
+        <com.nuist.you.smarthome.view.ClearEditText
+            android:id="@+id/et_input_phone_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_text_login"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_input_shape"
+            ed:leftIcon="@drawable/ic_phone_android_grey_400_18dp"
+            ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp"
+            android:drawablePadding="5dp"
+            android:inputType="phone"
+            android:hint="@string/text_input_phone"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="16dp" />
+
+
+        <com.nuist.you.smarthome.view.ClearEditText
+            android:id="@+id/et_input_password_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_input_phone_login"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_input_shape"
+            ed:leftIcon="@drawable/ic_lock_outline_grey_400_18dp"
+            ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp"
+            android:drawablePadding="5dp"
+            android:inputType="textPassword"
+            android:hint="@string/text_input_password"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="16dp" />
+
+        <RelativeLayout
+            android:id="@+id/relative_forget_or_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_input_password_login"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码？" />
+
+            <TextView
+                android:id="@+id/tv_go_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/text_bt_register" />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/relative_forget_or_register"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:background="@drawable/bt_sumbit_selector"
+            android:text="@string/text_bt_login"
+            android:textSize="@dimen/bt_submit__dim"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

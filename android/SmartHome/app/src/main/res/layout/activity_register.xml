@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ed="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/base_toolbar_view" />
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_text_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_register"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:id="@+id/relative_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_text_register"
+            android:layout_marginTop="15dp">
+
+            <com.nuist.you.smarthome.view.ClearEditText
+                android:id="@+id/et_input_phone_register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8"
+                android:background="@drawable/ed_input_shape"
+                android:drawablePadding="5dp"
+                android:hint="@string/text_input_phone"
+                android:inputType="phone"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textSize="16dp"
+                ed:leftIcon="@drawable/ic_phone_android_grey_400_18dp"
+                ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp" />
+
+            <TextView
+                android:id="@+id/tv_get_code_register"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:background="@drawable/ed_input_shape"
+                android:gravity="right"
+                android:paddingBottom="8dp"
+                android:text="@string/text_get_code"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <com.nuist.you.smarthome.view.ClearEditText
+            android:id="@+id/et_input_password_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_phone"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_input_shape"
+            android:drawablePadding="5dp"
+            android:hint="@string/text_input_password"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="16dp"
+            ed:leftIcon="@drawable/ic_lock_outline_grey_400_18dp"
+            ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp" />
+
+
+        <com.nuist.you.smarthome.view.ClearEditText
+            android:id="@+id/et_input_code_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_input_password_register"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_input_shape"
+            android:drawablePadding="5dp"
+            android:hint="@string/text_input_code"
+            android:inputType="number"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="16dp"
+            ed:leftIcon="@drawable/ic_code_grey"
+            ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp" />
+
+        <com.nuist.you.smarthome.view.ClearEditText
+            android:id="@+id/et_input_email_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_input_code_register"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ed_input_shape"
+            android:drawablePadding="5dp"
+            android:hint="@string/text_input_email"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textSize="16dp"
+            ed:leftIcon="@drawable/ic_email_grey_24dp"
+            ed:rightIcon="@drawable/ic_highlight_off_grey_400_18dp" />
+
+        <Button
+            android:id="@+id/bt_register"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@+id/et_input_email_register"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bt_sumbit_selector"
+            android:gravity="center"
+            android:text="@string/text_bt_register"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/bt_submit__dim" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

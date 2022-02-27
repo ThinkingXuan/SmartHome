@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">智能家居</string>
+    <string name="title_home">主页</string>
+    <string name="title_devices">设备</string>
+    <string name="title_dashboard">导出</string>
+    <string name="title_my">我的</string>
+
+    <string name="text_page_style">Page Style:</string>
+    <string name="text_indicator_style">Indicator Style:</string>
+    <string name="custom_style">Custom Style</string>
+    <string name="text_slide_mode">Indicator Slide Mode</string>
+    <string name="exit_app">再点一下退出</string>
+    <string name="living_room">温度</string>
+
+    <string name="text_register">手机快捷注册</string>
+    <string name="text_input_phone">请输入手机号</string>
+    <string name="text_get_code">获取验证码</string>
+    <string name="text_input_password">请输入密码</string>
+    <string name="text_input_code">请输入验证码</string>
+    <string name="text_input_email">请输入邮箱号</string>
+    <string name="text_bt_register">立即注册</string>
+    <string name="text_bt_login">立即登陆</string>
+
+    <string name="text_login">手机快捷登陆</string>
+
+    <string name="text_forget_password">重置密码</string>
+    <string name="text_password_reset">确定重置</string>
+    <string name="toast_message">Toast message</string>
+    <string name="text_login_dialog">正在登陆中，请稍后</string>
+    <string name="text_register_dialog">正在注册中，请稍后</string>
+
+</resources>
