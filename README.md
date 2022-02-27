@@ -23,36 +23,52 @@ SmartHome
 
 硬件图示：
 
-![image-20220227151616885](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151616885.png)
-
-
-
-![image-20220227151628449](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151628449.png)
-
-
-
-![image-20220227151634335](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151634335.png)
-
-![image-20220227151642418](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151642418.png)
-
-![image-20220227151647023](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151647023.png)
-
-![image-20220227151651053](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151651053.png)
-
-![image-20220227151655968](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151655968.png)
-
-![image-20220227151659965](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151659965.png)
-
 | 硬件图片                                                     |   名称   | 功能           |
 | ------------------------------------------------------------ | :------: | -------------- |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227145925353.png" width="100" center=true></center> |  CC2530  | 单片机控制器   |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151216878.png" width="100" center=true></center> | ESP-01s  | 组成智能网关   |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151616885.png" width="100" center=true></center> |  DHT111  | 温湿度传感器   |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151628449.png" width="100" center=true></center> |   MQ-2   | 烟雾传感器     |
-| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151634335.png" width="100" center=true></center> | 光敏电阻 | 测量光招       |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151634335.png" width="100" center=true></center> | 光敏电阻 | 测量光照       |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151642418.png" width="100" center=true></center> |  蜂鸣器  | 报警           |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151647023.png" width="100" center=true></center> |  继电器  | 控制小灯的通断 |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151651053.png" width="100" center=true></center> |   小灯   | 照明           |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151655968.png" width="100" center=true></center> | 电机驱动 | 驱动直流电机   |
 | <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227151659965.png" width="100" center=true></center> | 直流电机 | 电机使风扇旋转 |
 
+系统总体功能图：
+
+![image-20220227152347205](https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152347205.png)
+
+电路连接设计
+
+| 电路图                                                       | 说明                     |
+| ------------------------------------------------------------ | ------------------------ |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152721721.png" width="400" center=true></center> | ZigBee最小电路           |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152846570.png" width="400" center=true></center> | DHT11温湿度传感器        |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152854766.png" width="400" center=true></center> | MQ-2烟雾传感器           |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152902574.png" width="400" center=true></center> | 光敏电阻传感器           |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152910936.png" width="400" center=true></center> | 有源蜂鸣器               |
+| <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227152919704.png" width="400" center=true></center> | L9110s驱动电路和直流电机 |
+
+
+
+Android界面
+
+- 数据实时显示模块
+
+  <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227153628787.png"></center>
+
+- 家居控制模块
+
+    <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227153834294.png"></center>
+
+- 数据统计模块
+
+    <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227153937703.png"></center>
+
+- 报表导出模块
+
+    <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227154010972.png"></center>
+    
+    <center><img src="https://cdn.jsdelivr.net/gh/ThinkingXuan/HexoStaticImage/img/image-20220227154048902.png"></center>
