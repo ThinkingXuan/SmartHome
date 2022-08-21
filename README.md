@@ -1,6 +1,6 @@
 # SmartHome
 
-😁SmartHome 一款基于ZigBee的智能家居的设计于实现😂
+😁SmartHome 一款基于ZigBee的智能家居的设计与实现😂
 
 ### 简介：
 
